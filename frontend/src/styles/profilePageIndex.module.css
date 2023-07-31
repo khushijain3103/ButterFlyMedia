@@ -4,30 +4,23 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    
-    /* margin-left: 20rem; */
+    width: 100%;
 }
 
 .pp379Row {
+    width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     justify-content: space-around;
     align-items: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    /* margin-bottom: 2rem; */
     
 }
 
 @media (max-width: 600px) {
     .pp379Row {
         grid-template-columns: 1fr 1fr;
-        /* margin: 0; */
     }
-    /* .pp825ViewButton{
-        display: none;
-    } */
 }
 
 @media  (max-width: 768px){

@@ -44,9 +44,9 @@ export default function ImageComponent({ URL, blurHash }) {
                 />}
             </div>
             <div className={styles.ic956Options}>
-                <span><AiFillLike /> Likes</span>
-                <span><MdModeComment /> Comments</span>
-                <span><FaShare /> Share</span>
+                <span><AiFillLike size={20} /></span>
+                <span><MdModeComment size={20}/></span>
+                <span><FaShare size={20} /></span>
             </div>
 
         </div>

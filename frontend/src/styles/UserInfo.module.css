@@ -10,7 +10,7 @@
 
 .ui983EditProfileButton {
     background-color: var(--purple);
-    color: var(--white);
+    color: white;
     margin-right: 3rem;
     padding: 1rem 2rem;
     border-radius:50rem;
@@ -60,6 +60,7 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 2rem;
+    gap:1rem;
 }
 
 .ui983Card{
@@ -77,4 +78,5 @@
     .ui983Card{
         padding: 1rem 2rem 1rem 2rem;
     }
+
 } 

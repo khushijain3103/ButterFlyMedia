@@ -151,18 +151,19 @@ body {
 
 }
 
-.sideDetails{
-
-}
-
-.app392RightSide
-{
-
-}
 
 @media only screen and (max-width: 768px) {
   .sideDetails{
     display: none;
+  }
+  .app392RightSide {
+    padding-top: 5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .app392RightSide{
+    width: 100%;
   }
 }
 
