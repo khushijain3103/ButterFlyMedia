@@ -14,71 +14,65 @@ export default function NewsFeedCard({ isGrid, userData, isProfile = false }) {
 
     const handleCloseError = () => {
         setError('');
-      };
+    };
 
     const router = useRouter();
-    if(router.pathname === "/profile/[userName]") setisNewsFeed(false);
+    if (router.pathname === "/profile/[userName]") setisNewsFeed(false);
 
     const [postData, setPostData] = useState([]);
     const [pageNumber, setpageNumber] = useState(1);
 
     useEffect(() => {
         setisNewsFeed(!isProfile);
-        fetchData(pageNumber, postData , setPostData , setpageNumber , setError);
+        fetchData(pageNumber, postData, setPostData, setpageNumber, setError);
     }, [setError]);
 
-    console.log('userData: ', userData)
-
-    // if (!userData) return null;
-    console.log(error.length);
-
     const nextData = () => {
-        fetchData(pageNumber, postData , setPostData , setpageNumber , setError);
+        fetchData(pageNumber, postData, setPostData, setpageNumber, setError);
     }
 
     return (
         <>
-        {error.length === 0 ?
-            <div className={styles.i795Container}>
-            <InfiniteScroll
-                dataLength={postData.length} //This is important field to render the next data
-                next={nextData}
-                hasMore={true}
-                loader={<Loader/>}
-                endMessage={
-                    <p style={{ textAlign: 'center' }}>
-                        <b>Yay! You have seen it all</b>
-                    </p>
-                }
-                // below props only if you need pull down functionality
-            >
-                {isNewsFeed ? postData.map((data) =>
-                    <FeedCard postData={data} />
-                ) :
-                    userData?.photos?.map((singlePhoto) => {
-
-                        console.log('User Data: ', userData?.name);
-
-                        return (
-                            <FeedCard 
-                                key={singlePhoto?.id}
-                                URL={singlePhoto?.URL}
-                                blurHash={singlePhoto?.blurHash}
-                                isGrid={isGrid}
-                                profileImage={userData?.profileImage}
-                                profileName={userData?.userName}
-                                userName={userData?.name}
-                            />
-                        )
-                    })
-                }
-
-            </InfiniteScroll>
+            {error.length === 0 ?
+                <div className={styles.i795Container}>
+                    <InfiniteScroll
+                        dataLength={postData.length} //This is important field to render the next data
+                        next={nextData}
+                        hasMore={true}
+                        loader={<Loader />}
+                        endMessage={
+                            <p style={{ textAlign: 'center' }}>
+                                <b>Yay! You have seen it all</b>
+                            </p>
+                        }
+                    // below props only if you need pull down functionality
+                    >
+                        {isNewsFeed ? postData.map((data) =>
+                            <FeedCard key={postData.postId} postData={data} />
+                        ) :
+                            userData?.photos?.map((singlePhoto) => {
 
 
-            </div> :
-            <ErrorModule message={error} onClose={handleCloseError} />}
-            </>
+                                return (
+                                    <FeedCard
+                                        key={singlePhoto?.id}
+                                        URL={singlePhoto?.URL}
+                                        blurHash={singlePhoto?.blurHash}
+                                        isGrid={isGrid}
+                                        profileImage={userData?.profileImage}
+                                        profileName={userData?.userName}
+                                        userName={userData?.name}
+                                    />
+                                )
+                            })
+                        }
+
+                    </InfiniteScroll>
+
+
+                </div> :
+                <ErrorModule message={error} onClose={handleCloseError} />}
+        </>
     )
 
 }

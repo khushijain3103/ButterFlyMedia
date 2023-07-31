@@ -1,20 +1,18 @@
 import Image from "next/image";
-import styles from '../../styles/UserInfo.module.css'
-import { useEffect } from "react";
+import styles from '../../styles/UserInfo.module.css';
 
+export default function UserInfo({ userName, followers, following, bio, posts, profileImage, profileName }) {
 
-export default function UserInfo({userName , followers , following , bio , posts , profileImage , profileName}){
-
-    return(
+    return (
         <div className={styles.ui983Container}>
-            <div className={styles.ui402Background}/>
+            <div className={styles.ui402Background} />
             <div className={styles.ui107ImageRow}>
                 <Image
-                    loader={()=> profileImage} 
-                    src={profileImage} 
-                    alt="profile image" 
+                    loader={() => profileImage}
+                    src={profileImage}
+                    alt="profile image"
                     width={150}
-                    height={150} 
+                    height={150}
                     className={styles.ui983ProfileImage}
                 />
                 <button className={styles.ui983EditProfileButton}>Edit Profile</button>
@@ -31,6 +29,6 @@ export default function UserInfo({userName , followers , following , bio , posts
             </div>
         </div>
 
-        
+
     )
 } 

@@ -1,13 +1,12 @@
-// import Image from "next/image";
 import styles from '../../styles/SideDetails.module.css'
 import Image from 'next/image'
 import { GoMoon, GoSearch } from "react-icons/go";
-import { FaHome } from "react-icons/fa" 
+import { FaHome } from "react-icons/fa"
 import { useState, useEffect } from "react";
-import {IoIosNotificationsOutline} from 'react-icons/io';
-import {MdOutlineExplore} from 'react-icons/md';
-import {BiSolidMessageRounded} from 'react-icons/bi';
-import {FcViewDetails} from 'react-icons/fc';
+import { IoIosNotificationsOutline } from 'react-icons/io';
+import { MdOutlineExplore } from 'react-icons/md';
+import { BiSolidMessageRounded } from 'react-icons/bi';
+import { FcViewDetails } from 'react-icons/fc';
 
 
 export default function SideDetails() {
@@ -15,16 +14,16 @@ export default function SideDetails() {
     const [darkMode, setDarkMode] = useState(false);
 
     const toggleDarkMode = () => {
-      setDarkMode((prevIsDarkTheme) => !prevIsDarkTheme);
+        setDarkMode((prevIsDarkTheme) => !prevIsDarkTheme);
     };
-  
+
     useEffect(() => {
-      const root = document.documentElement;
-      if (darkMode) {
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
-      }
+        const root = document.documentElement;
+        if (darkMode) {
+            root.classList.add('dark');
+        } else {
+            root.classList.remove('dark');
+        }
     }, [darkMode]);
 
     return (
@@ -34,12 +33,12 @@ export default function SideDetails() {
             </div>
 
             <div className={styles.sd728Menu}>
-                <span className={styles.sd628MenuItem}><FaHome size={20}/>Home</span>
-                <span className={styles.sd628MenuItem}><GoSearch size={20}/>Search</span>
-                <span className={styles.sd628MenuItem}><FcViewDetails size={20}/>Details</span>
-                <span className={styles.sd628MenuItem}><MdOutlineExplore size={20}/>Explore</span>
-                <span className={styles.sd628MenuItem}><BiSolidMessageRounded size={20}/>Messages</span>
-                <span className={styles.sd628MenuItem}><IoIosNotificationsOutline size={20}/>Notifications</span>
+                <span className={styles.sd628MenuItem}><FaHome size={20} />Home</span>
+                <span className={styles.sd628MenuItem}><GoSearch size={20} />Search</span>
+                <span className={styles.sd628MenuItem}><FcViewDetails size={20} />Details</span>
+                <span className={styles.sd628MenuItem}><MdOutlineExplore size={20} />Explore</span>
+                <span className={styles.sd628MenuItem}><BiSolidMessageRounded size={20} />Messages</span>
+                <span className={styles.sd628MenuItem}><IoIosNotificationsOutline size={20} />Notifications</span>
             </div>
             <div className={styles.sd294User}>
                 <div className={styles.sd829UserName}>
@@ -51,7 +50,7 @@ export default function SideDetails() {
                             width={30}
                             height={30}
                             className={styles.sd847ProfileImage}
-                    
+
                         />
                     </div>
                     <div className={styles.sd456HeaderText}>

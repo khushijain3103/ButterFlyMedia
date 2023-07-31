@@ -9,7 +9,6 @@ import { Blurhash } from "react-blurhash";
 export default function ImageComponent({ URL, blurHash }) {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-    console.log(blurHash);
 
     return (
         <div className={styles.ic428Container}>

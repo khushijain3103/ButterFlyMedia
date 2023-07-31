@@ -24,13 +24,13 @@ const addDataIntoCache = (cacheName, url, response) => {
     caches.open(cacheName).then((cache) => {
         cache.put(url, data);
     });
-  
+
 
 };
 
-export async function fetchData( pageNumber , postData , setPostData , setpageNumber , setError) {
+export async function fetchData(pageNumber, postData, setPostData, setpageNumber, setError) {
 
-    console.log({setError});
+
 
     let data;
     let url = `https://api.unsplash.com/photos?page=${pageNumber}`;
@@ -41,14 +41,14 @@ export async function fetchData( pageNumber , postData , setPostData , setpageNu
         const cachedResponse = await cacheStorage.match(url);
 
         if (checkCache(url) && cacheStorage && cachedResponse) {
-            console.log(cachedResponse);
+
             data = await cachedResponse.json();
         }
 
         else {
             const response = await fetch(url, {
                 headers: {
-                    Authorization:`Client-ID ${process.env.NEXT_PUBLIC_ACCESS_KEY}`
+                    Authorization: `Client-ID ${process.env.NEXT_PUBLIC_ACCESS_KEY}`
                 }
             });
             if (!response.ok) {

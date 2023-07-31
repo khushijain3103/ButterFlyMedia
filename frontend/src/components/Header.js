@@ -2,9 +2,9 @@ import styles from '../styles/Header.module.css';
 import { GoMoon } from "react-icons/go";
 import { useState, useEffect } from "react";
 
-export default function Header () {
+export default function Header() {
 
-const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode((prevIsDarkTheme) => !prevIsDarkTheme);
@@ -19,19 +19,19 @@ const [darkMode, setDarkMode] = useState(false);
     }
   }, [darkMode]);
 
-    return (
-        <div className={styles.h302Container}>
-            <ul className={styles.h139List}>
-                <li className={styles.h391Item}>
-                    Posts
-                </li>
-                <li className={styles.h391Item}>
-                    Profile
-                </li>
-                <li className={styles.h391Item}>
-                    <GoMoon onClick={toggleDarkMode} size={20} />
-                </li>
-            </ul>
-        </div>
-    )
+  return (
+    <div className={styles.h302Container}>
+      <ul className={styles.h139List}>
+        <li className={styles.h391Item}>
+          Posts
+        </li>
+        <li className={styles.h391Item}>
+          Profile
+        </li>
+        <li className={styles.h391Item}>
+          <GoMoon onClick={toggleDarkMode} size={20} />
+        </li>
+      </ul>
+    </div>
+  )
 }

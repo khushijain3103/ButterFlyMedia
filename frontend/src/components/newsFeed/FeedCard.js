@@ -7,43 +7,41 @@ import { MdModeComment } from "react-icons/md";
 import { FaShare } from "react-icons/fa";
 import { Blurhash } from "react-blurhash";
 import { useMemo } from "react";
-import { useRouter } from "next/router";
-import { fetchData } from "./api";
 
-const FeedCard = ({ postData, userName , URL , blurHash , profileImage , isGrid }) => {
 
-   
+const FeedCard = ({ postData, userName, URL, blurHash, profileImage, isGrid }) => {
+
+
 
     const [isImageLoaded, setIsImageLoaded] = useState(false);
- 
+
     let userData;
-    if(!userName) userData = postData;
-    else userData = { 
-        UserprofileImage: profileImage , 
-        UserprofileName: userName ,
-        UserName: userName ,
-        URL: URL ,
+    if (!userName) userData = postData;
+    else userData = {
+        UserprofileImage: profileImage,
+        UserprofileName: userName,
+        UserName: userName,
+        URL: URL,
         blurHash: blurHash,
-        likes: parseInt((Math.random() * 1000)).toLocaleString() ,
+        likes: parseInt((Math.random() * 1000)).toLocaleString(),
     };
 
     const likes = userData.likes;
 
-    const[currLikes , setcurrLikes] = useState(likes);
+    const [currLikes, setcurrLikes] = useState(likes);
 
-    const comments = useMemo(() => parseInt((Math.random() * 1000)).toLocaleString(), [] );
+    const comments = useMemo(() => parseInt((Math.random() * 1000)).toLocaleString(), []);
 
     const profileHandler = async () => {
         router.push(`/profile/${postData.UserprofileName}`);
     }
 
     const LikesHandler = () => {
-        if(currLikes === likes) setcurrLikes(currLikes + 1);
-        else
-        {
+        if (currLikes === likes) setcurrLikes(currLikes + 1);
+        else {
             setcurrLikes(currLikes - 1);
         }
-            
+
     }
 
     return (
@@ -58,8 +56,8 @@ const FeedCard = ({ postData, userName , URL , blurHash , profileImage , isGrid 
                         height={30}
                         className={styles.fc847ProfileImage}
                         onClick={profileHandler}
-                
-                        
+
+
                     />
                 </div>
                 <div className={styles.feedCard456HeaderText}>
@@ -101,8 +99,8 @@ const FeedCard = ({ postData, userName , URL , blurHash , profileImage , isGrid 
 
             </div>
             <div className={styles.fc672Options}>
-                <div className={styles.Like} 
-                    onClick= {LikesHandler}
+                <div className={styles.Like}
+                    onClick={LikesHandler}
                 ><AiFillLike className={styles.Like} />{`${currLikes.toLocaleString()} Likes`}</div>
                 <div className={styles.fc378OptionsItem}><MdModeComment />{`${comments} Comments`}</div>
                 <div className={styles.fc378OptionsItem}><FaShare /> Share</div>

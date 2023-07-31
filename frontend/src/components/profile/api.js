@@ -25,7 +25,7 @@ const addDataIntoCache = (cacheName, url, response) => {
     }
 };
 
-export async function fetchData(userName, userData , setUserData , setError) {
+export async function fetchData(userName, userData, setUserData, setError) {
 
     let data;
 
@@ -37,18 +37,17 @@ export async function fetchData(userName, userData , setUserData , setError) {
         const cachedResponse = await cacheStorage.match(url);
 
         if (checkCache(userName, url) && cacheStorage && cachedResponse) {
-            
+
             data = await cachedResponse.json();
         }
         else {
 
             const response = await fetch(url, {
                 headers: {
-                    Authorization:`Client-ID ${process.env.NEXT_PUBLIC_ACCESS_KEY}`
+                    Authorization: `Client-ID ${process.env.NEXT_PUBLIC_ACCESS_KEY}`
                 }
             });
 
-            console.log(response.status);
 
             if (!response.ok) {
 
@@ -56,7 +55,6 @@ export async function fetchData(userName, userData , setUserData , setError) {
             }
             data = await response.json();
 
-            console.log(data);
             addDataIntoCache(`user${userName}`, url, data);
         }
 
