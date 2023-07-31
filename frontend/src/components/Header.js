@@ -1,6 +1,7 @@
 import styles from '../styles/Header.module.css';
 import { GoMoon } from "react-icons/go";
 import { useState, useEffect } from "react";
+import Link from 'next/link';
 
 export default function Header() {
 
@@ -22,14 +23,14 @@ export default function Header() {
   return (
     <div className={styles.h302Container}>
       <ul className={styles.h139List}>
-        <li className={styles.h391Item}>
+        <Link href="/"><li className={styles.h391Item}>
           Posts
-        </li>
-        <li className={styles.h391Item}>
+        </li></Link>
+        <Link href="/404"><li className={styles.h391Item}>
           Profile
-        </li>
-        <li className={styles.h391Item}>
-          <GoMoon onClick={toggleDarkMode} size={20} />
+        </li></Link>
+        <li  onClick={toggleDarkMode} className={styles.h391Item}>
+          <GoMoon size={20} />
         </li>
       </ul>
     </div>

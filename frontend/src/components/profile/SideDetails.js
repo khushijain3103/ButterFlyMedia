@@ -7,6 +7,7 @@ import { IoIosNotificationsOutline } from 'react-icons/io';
 import { MdOutlineExplore } from 'react-icons/md';
 import { BiSolidMessageRounded } from 'react-icons/bi';
 import { FcViewDetails } from 'react-icons/fc';
+import Link from 'next/link';
 
 
 export default function SideDetails() {
@@ -33,12 +34,12 @@ export default function SideDetails() {
             </div>
 
             <div className={styles.sd728Menu}>
-                <span className={styles.sd628MenuItem}><FaHome size={20} />Home</span>
-                <span className={styles.sd628MenuItem}><GoSearch size={20} />Search</span>
-                <span className={styles.sd628MenuItem}><FcViewDetails size={20} />Details</span>
-                <span className={styles.sd628MenuItem}><MdOutlineExplore size={20} />Explore</span>
-                <span className={styles.sd628MenuItem}><BiSolidMessageRounded size={20} />Messages</span>
-                <span className={styles.sd628MenuItem}><IoIosNotificationsOutline size={20} />Notifications</span>
+                <Link href="/feeds"><span className={styles.sd628MenuItem}><FaHome size={20} />Home</span></Link>
+                <Link href="/404"><span className={styles.sd628MenuItem}><GoSearch size={20} />Search</span></Link>
+                <Link href="/404"><span className={styles.sd628MenuItem}><FcViewDetails size={20} />Details</span></Link>
+                <Link href="/404"><span className={styles.sd628MenuItem}><MdOutlineExplore size={20} />Explore</span></Link>
+                <Link href="/404"><span className={styles.sd628MenuItem}><BiSolidMessageRounded size={20} />Messages</span></Link>
+                <Link href="/404"><span className={styles.sd628MenuItem}><IoIosNotificationsOutline size={20} />Notifications</span></Link>
             </div>
             <div className={styles.sd294User}>
                 <div className={styles.sd829UserName}>

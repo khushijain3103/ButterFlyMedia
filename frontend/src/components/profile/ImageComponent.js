@@ -34,7 +34,7 @@ export default function ImageComponent({ URL, blurHash }) {
                     style={{
                         height: "100%",
                         width: "100%",
-                        objectFit: "contain",
+                        objectFit: "cover",
                         opacity: isImageLoaded ? 0.5 : 1,
                         transition: "opacity 0.3s ease-in-out",
                     }}

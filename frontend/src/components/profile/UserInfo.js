@@ -15,7 +15,7 @@ export default function UserInfo({ userName, followers, following, bio, posts, p
                     height={150}
                     className={styles.ui983ProfileImage}
                 />
-                <button className={styles.ui983EditProfileButton}>Edit Profile</button>
+                <button className={styles.ui983EditProfileButton}>Follow</button>
             </div>
             <div className={styles.ui235Row2}>
                 <div className={styles.ui983UserName}>{userName}</div>

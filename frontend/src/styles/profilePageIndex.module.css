@@ -1,8 +1,8 @@
 .pp729Container{
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     width: 100%;
+    height: 100%;
     /* background-color: var(--white); */
 }
 
@@ -16,16 +16,6 @@
     margin-right: 2rem;
     /* margin-bottom: 2rem; */
     
-}
-
-.pp245List {
-
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
 }
 
 @media (max-width: 600px) {
@@ -45,22 +35,6 @@
     }
 }
 
-.pp258UserPhotos {
-    margin: 20px;
-}
-
-.pp267Layout {
-    display: flex;
-}
-.pp289SideDetails{
-    width: 20%;
-}
-
-
-.pp851Details{
-    width: 70%;
-    margin: 0 auto;
-}
 .pp503UserInfo{
     margin: 0 auto;
     width: 100%;
@@ -71,7 +45,3 @@
     height: 10px;
 
 }
-
-/* .pp739ListButton{
-    height: 10px;
-} */
