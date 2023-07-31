@@ -73,3 +73,9 @@
     color: var(--purple);
     font-weight:700;
 }
+
+@media (max-width: 768px) {
+    .sd428Container h1{
+        font-size: 1.5em;
+    }
+}

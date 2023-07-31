@@ -29,8 +29,8 @@ export default function SideDetails() {
 
     return (
         <div className={styles.sd428Container}>
-            <div>
-                <h1>BUTTERFLY</h1>
+            <div className={styles.sd390Butterfly}>
+                <Link href="/" ><h1>BUTTERFLY</h1></Link>
             </div>
 
             <div className={styles.sd728Menu}>
