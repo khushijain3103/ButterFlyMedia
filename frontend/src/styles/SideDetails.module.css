@@ -75,7 +75,7 @@
 }
 
 @media (max-width: 768px) {
-    .sd428Container h1{
+    .sd428Container{
         font-size: 1.5em;
     }
 }

@@ -1,7 +1,7 @@
 .h302Container {
     margin: 0;
     padding: 0;
-    width: 100vw;
+    width: 100%;
     background-color: var(--white);
     display: flex;
     justify-content: center;
