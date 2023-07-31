@@ -1,9 +1,11 @@
 .pp729Container{
     display: flex;
     flex-direction: column;
-    /* width: 77%; */
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    /* background-color: var(--white); */
+    
+    /* margin-left: 20rem; */
 }
 
 .pp379Row {
