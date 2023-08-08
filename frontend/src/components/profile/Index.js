@@ -6,8 +6,11 @@ import { CiViewList } from "react-icons/ci";
 import NewsFeedCard from '../newsFeed/index.js';
 import { fetchData } from './api';
 import ErrorModule from '../ErrorModule.js';
+import Loader from '../Loader.js';
 
 export default function ProfilePage({ userName }) {
+
+    const [Loading, setLoading] = useState(false);
 
     const [isGrid, setisGrid] = useState(true);
 
@@ -24,12 +27,14 @@ export default function ProfilePage({ userName }) {
 
     useEffect(() => {
         fetchData(userName, userData, setUserData, setError);
+        setLoading(true);
     }, [userName]);
 
     if (!userData) return null;
 
     return (
         <>
+            {!Loading ? <Loader/> : null}
             {error.length === 0 ? <div className={styles.pp729Container}>
                 <div className={styles.pp503UserInfo}>
                     <UserInfo
