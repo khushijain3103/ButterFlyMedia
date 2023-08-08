@@ -11,6 +11,7 @@ import Loader from '../Loader.js';
 export default function ProfilePage({ userName }) {
 
     const [Loading, setLoading] = useState(false);
+    console.log(Loading);
 
     const [isGrid, setisGrid] = useState(true);
 
