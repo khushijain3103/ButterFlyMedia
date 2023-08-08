@@ -2,30 +2,34 @@ import styles from '../../styles/SideDetails.module.css'
 import Image from 'next/image'
 import { GoMoon, GoSearch } from "react-icons/go";
 import { FaHome } from "react-icons/fa"
-import { useState, useEffect } from "react";
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { MdOutlineExplore } from 'react-icons/md';
 import { BiSolidMessageRounded } from 'react-icons/bi';
 import { FcViewDetails } from 'react-icons/fc';
 import Link from 'next/link';
+import { useContext , useEffect } from 'react';
+import UserContext from '@/store/context';
 
 
 export default function SideDetails() {
 
-    const [darkMode, setDarkMode] = useState(false);
+    const ctx = useContext(UserContext);
 
-    const toggleDarkMode = () => {
-        setDarkMode((prevIsDarkTheme) => !prevIsDarkTheme);
-    };
-
+    console.log(ctx)
+    
     useEffect(() => {
-        const root = document.documentElement;
-        if (darkMode) {
-            root.classList.add('dark');
-        } else {
-            root.classList.remove('dark');
-        }
-    }, [darkMode]);
+      const root = document.documentElement;
+      if (ctx.view === "dark") {
+          root.classList.add('dark');
+      } else {
+          root.classList.remove('dark');
+      }
+  
+      console.log(ctx.view)
+  
+      }, [ctx]);
+
+    
 
     return (
         <div className={styles.sd428Container}>
@@ -58,7 +62,7 @@ export default function SideDetails() {
                         <p>NEOM</p>
                     </div>
                 </div>
-                <GoMoon onClick={toggleDarkMode} size={20} />
+                <GoMoon onClick={ctx.setView} size={20} />
             </div>
         </div>
     )

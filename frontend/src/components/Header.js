@@ -1,24 +1,29 @@
 import styles from '../styles/Header.module.css';
 import { GoMoon } from "react-icons/go";
-import { useState, useEffect } from "react";
 import Link from 'next/link';
+import { useContext , useEffect } from 'react';
+import UserContext from '@/store/context';
 
 export default function Header() {
 
-  const [darkMode, setDarkMode] = useState(false);
+  const ctx = useContext(UserContext);
 
-  const toggleDarkMode = () => {
-    setDarkMode((prevIsDarkTheme) => !prevIsDarkTheme);
-  };
-
+  console.log(ctx)
+  
   useEffect(() => {
     const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add('dark');
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (ctx.view === "dark") {
+        root.classList.add('dark');
     } else {
-      root.classList.remove('dark');
+        root.classList.remove('dark');
     }
-  }, [darkMode]);
+
+    
+    console.log(ctx.view)
+
+    }, [ctx]);
 
   return (
     <div className={styles.h302Container}>
@@ -29,7 +34,7 @@ export default function Header() {
         <Link href="/404"><li className={styles.h391Item}>
           Profile
         </li></Link>
-        <li  onClick={toggleDarkMode} className={styles.h391Item}>
+        <li  onClick={()=> ctx.setView()} className={styles.h391Item}>
           <GoMoon size={20} />
         </li>
       </ul>
